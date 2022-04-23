@@ -23,15 +23,9 @@ export const AoC2021Day02 = (): void => {
     let positions: Position = { depth: 0, horizontal: 0 };
     cmd.forEach(c => {
       switch (c.dir) {
-        case 'forward':
-          positions.horizontal += c.unit;
-          break;
-        case 'down':
-          positions.depth += c.unit;
-          break;
-        case 'up':
-          positions.depth -= c.unit;
-          break;
+        case 'forward': positions.horizontal += c.unit; break;
+        case 'down': positions.depth += c.unit; break;
+        case 'up': positions.depth -= c.unit; break;
       }
     });
     return positions.depth * positions.horizontal;
@@ -46,12 +40,8 @@ export const AoC2021Day02 = (): void => {
           positions.horizontal += c.unit;
           positions.depth += c.unit * aim;
           break;
-        case 'down':
-          aim += c.unit;
-          break;
-        case 'up':
-          aim -= c.unit;
-          break;
+        case 'down': aim += c.unit; break;
+        case 'up': aim -= c.unit; break;
       }
     });
     return positions.depth * positions.horizontal;
