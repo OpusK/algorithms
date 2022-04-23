@@ -13,11 +13,11 @@ type Position = {
 
 export const AoC2021Day02 = (): void => {
   const file_path = path.join(__dirname, '../../2021_day02_input.txt');
-  const data = fs.readFileSync(file_path).toString().split('\n');
-  const cmd: Command[] = data.map(line => {
-    let str = line.split(' ');
-    return { dir: str[0], unit: Number(str[1]) };
-  });
+  const cmd: Command[] = fs.readFileSync(file_path).toString().split('\n')
+    .map(line => {
+      let str = line.split(' ');
+      return { dir: str[0], unit: Number(str[1]) };
+    });
 
   const part1 = (cmd: Command[]): number => {
     let positions: Position = { depth: 0, horizontal: 0 };
