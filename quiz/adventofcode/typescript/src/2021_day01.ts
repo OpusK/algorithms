@@ -1,7 +1,7 @@
 import fs from 'fs';
 import path from 'path';
 
-export const aoc2021Day01 = (): void => {
+export const AoC2021Day01 = (): void => {
   const file_path = path.join(__dirname, '../../2021_day01_input.txt');
   const data = fs.readFileSync(file_path).toString()
     .split('\n').map(Number);
